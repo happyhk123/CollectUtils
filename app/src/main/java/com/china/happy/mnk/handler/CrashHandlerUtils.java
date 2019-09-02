@@ -167,7 +167,7 @@ public class CrashHandlerUtils implements Thread.UncaughtExceptionHandler {
             printWriter.print("App Version:");
             printWriter.print(packageInfo.versionName);
             printWriter.print('_');
-            printWriter.println(packageInfo.versionCode);
+            printWriter.println(packageInfo.getLongVersionCode());
 
             //android版本号
             printWriter.print("OS Version:");
@@ -184,8 +184,8 @@ public class CrashHandlerUtils implements Thread.UncaughtExceptionHandler {
             printWriter.println(Build.MODEL);
 
             //cpu架构
-            printWriter.print("CPU ABI:");
-            printWriter.println(Build.CPU_ABI);
+            printWriter.print("CPU SUPPORTED_ABIS:");
+            printWriter.println(Build.SUPPORTED_ABIS);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
